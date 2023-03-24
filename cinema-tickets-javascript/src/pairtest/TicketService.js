@@ -77,7 +77,7 @@ export default class TicketService {
     // now lets check to make sure we have at least one adult in the group
     if (transactionSummary.numberOfAdultTicketsPurchased <= 0)
       throw new InvalidPurchaseException(
-        `There must be at least one Adult in the transaction`
+        `There must be at least one Adult to accompany any children or infants`
       );
 
     // finally lets check to see that we have the correct ratio of infants to adults
@@ -86,7 +86,7 @@ export default class TicketService {
       transactionSummary.numberOfAdultTicketsPurchased
     )
       throw new InvalidPurchaseException(
-        `You cannot purchased more infants (${transactionSummary.numberOfInfantTicketsPurchased}) than adult (${transactionSummary.numberOfAdultTicketsPurchased}) ticket types`
+        `You cannot purchase more infant (${transactionSummary.numberOfInfantTicketsPurchased}) than adult (${transactionSummary.numberOfAdultTicketsPurchased}) ticket types`
       );
 
     return transactionSummary;

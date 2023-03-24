@@ -3,21 +3,19 @@
 ## Background Information
 
 - Firstly, wasn't sure if you were allowed to use Typescript so I didn't use it. The solution would have been different as I would have coded to an interface rather an implementation.
-- Secondly, there doesn't need to be a 1-to-1 ratio of adults to children ( there is a 1-to-1 ratio for adults to infants ). This implementation will therefore allow 1 adult, 19 children and 1 infant.
 
 ## Environment
 
 - This application was built and tested using node version 18.15.0
+- It has a .node-version file that sets the version of node for the project so if you use [nodenv](https://github.com/nodenv/nodenv) you should be fine
 
 ## How to run the service
 
-- ```
-    cd cinema-tickets-javascript
-    npm install
-  ```
-- To run in development mode run `npm run start:dev`
+- Change into the project directory and then execute `cd cinema-tickets-javascript && npm install`
+- To run once `npm start`
+- To run in development mode ( continually reloading if a file changes ) run `npm run start:dev`
+- To run tests `npm test`
 
-## TODO
+## Other Considerations
 
-- Testing ( important!!! )
-- Make the logging a little better
+- I had a look at npm DWP logging packages [@dwp/node-logger](https://www.npmjs.com/package/@dwp/node-logger) but this appears to be for http access logging. Normally I'd look at any packages that have been created by the official DWP team and utilise those as much as possible
