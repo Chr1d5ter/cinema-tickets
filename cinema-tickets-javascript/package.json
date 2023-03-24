@@ -8,11 +8,27 @@
   "type": "module",
   "scripts": {
     "start:dev": "nodemon --watch ./src/ ./src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.5.0",
+    "chai": "^4.3.7",
     "jest": "28.1.1",
-    "mocha": "10.0.0",
     "nodemon": "^2.0.22"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/thirdparty"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }

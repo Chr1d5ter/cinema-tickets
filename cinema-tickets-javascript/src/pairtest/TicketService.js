@@ -1,4 +1,4 @@
-import Account from "./classes/Account.class.js";
+import AccountClass from "./classes/AccountClass.js";
 import TicketTypeRequest from "./lib/TicketTypeRequest.js";
 import InvalidPurchaseException from "./lib/InvalidPurchaseException.js";
 import { MAX_TICKETS_PER_TRANSACTION } from "./config/Constants.js";
@@ -94,7 +94,7 @@ export default class TicketService {
 
   purchaseTickets(accountId, ...ticketTypeRequests) {
     try {
-      const customerAccount = new Account(accountId);
+      const customerAccount = new AccountClass(accountId);
       const requiredTickets = this.#validateTicketTypes(ticketTypeRequests);
       const transactionSummary = this.#validateTransaction(requiredTickets);
 
@@ -110,7 +110,7 @@ export default class TicketService {
         transactionSummary.totalCost
       );
     } catch (error) {
-      console.log("Ended the transaction");
+      // this could do with being logged in and pushed to logstash or whatever
       throw new InvalidPurchaseException(error);
     }
   }

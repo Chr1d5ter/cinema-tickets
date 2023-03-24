@@ -5,6 +5,10 @@
 - Firstly, wasn't sure if you were allowed to use Typescript so I didn't use it. The solution would have been different as I would have coded to an interface rather an implementation.
 - Secondly, there doesn't need to be a 1-to-1 ratio of adults to children ( there is a 1-to-1 ratio for adults to infants ). This implementation will therefore allow 1 adult, 19 children and 1 infant.
 
+## Environment
+
+- This application was built and tested using node version 18.15.0
+
 ## How to run the service
 
 - ```
